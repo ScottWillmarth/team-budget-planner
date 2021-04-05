@@ -98,7 +98,7 @@ function DeleteRow(dealId) {
      
     for( var i = 0; i < myData.length; i++){ 
     
-        if ( myData[i].dealId === dealId) { 
+        if ( myData[i].dealId == dealId) { 
     
             myData.splice(i, 1); 
         }
@@ -126,5 +126,51 @@ function EditCost() {
     }
 	
     CreateTableFromJSON();
+}
+
+function Editvendor() {
+    var dealId = document.getElementById("dealIdInput").value;
+    var projectVendor = document.getElementById("vendorInput").value;
+    var projectName = document.getElementById("pNameInput").value;
+    var mangerName = document.getElementById("projectInput").value;
+
+
+    document.getElementById("dealIdInput").value = "";
+    document.getElementById("vendorInput").value = "";
+    document.getElementById("pNameInput").value = "";
+    document.getElementById("projectInput").value = "";
+
+	for( var i = 0; i < myData.length; i++)
+	{ 
+    
+        if ( myData[i].dealId == dealId) 
+        { 
+    		if(projectVendor)
+    		{
+    			myData[i].client_name = projectVendor; 
+    		}
+    		if(projectName)
+    		{
+    			myData[i].project_name = projectName; 
+    		}
+    		if(mangerName)
+    		{
+    			myData[i].project_manager = mangerName; 
+    		}
+        }
+    }
+	
+    CreateTableFromJSON();
+}
+
+function DeleteVendor() {
+    var dealId = document.getElementById("dealIdInput").value;
+
+
+
+    document.getElementById("dealIdInput").value = "";
+	
+	DeleteRow(dealId);
+
 }
 

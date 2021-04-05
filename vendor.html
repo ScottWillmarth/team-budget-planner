@@ -2,7 +2,7 @@
  
 <html>
 <head>
-    <title>Cost</title>
+    <title>Vendor</title>
     <script src="toggle.js"></script>
     <style>
         .hide
@@ -34,22 +34,23 @@
       <button id="showPage2Btn" data-launch-view="page2">Product Manager</button>
     <div id="lotOfPages">
 
-    <div class="view" id="page1">
+    <div class="view hide" id="page1">
             <h1>Finance View</h1>
-            <p id="showData"></p>
-            <button onclick="window.location.href='editCost.html'">Edit Cost</button>
+            <p> Nothing! </p>
     </div>
         
 
-    <div class="view hide" id="page2">
+    <div class="view" id="page2">
             <h1>Product Manager View</h1>
-            <p> Nothing! </p>
+            <p id="showData"></p>
+            <button onclick="window.location.href='table_example.html'">Add Vendor</button>
+            <button onclick="window.location.href='editVendor.html'">Edit</button>
+            <button onclick="window.location.href='deleteVendor.html'">Delete Vendors</button>
         </div>
 
     </div>
 
+<br>
  <button onclick="window.location.href='index.html'">Home</button>
-
-
 </body>
 </html>
