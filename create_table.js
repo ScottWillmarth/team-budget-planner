@@ -86,7 +86,8 @@ function AddNewDeal() {
 
 }
 
-function InsertRow(dealId, clientName, projectName, projectManager, projectCost) {
+function InsertRow(dealId, clientName, projectName, projectManager, projectCost) 
+{
     myData.push({"dealId": dealId, "client_name" : clientName, "project_name" : projectName, "project_manager" : projectManager, "project_cost" : projectCost})
     currentDealId++;
     CreateTableFromJSON();
@@ -103,6 +104,27 @@ function DeleteRow(dealId) {
         }
     
     }
+    CreateTableFromJSON();
+}
+
+function EditCost() {
+    var dealId = document.getElementById("dealIdInput").value;
+    var projectCost = document.getElementById("projectCostInput").value;
+
+
+    document.getElementById("dealIdInput").value = "";
+    document.getElementById("projectCostInput").value = "";
+
+	for( var i = 0; i < myData.length; i++)
+	{ 
+    
+        if ( myData[i].dealId == dealId) 
+        { 
+    
+            myData[i].project_cost = projectCost; 
+        }
+    }
+	
     CreateTableFromJSON();
 }
 
